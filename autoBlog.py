@@ -12,6 +12,7 @@ def parse_args():
     parser.add_argument(
         "--is_public",
         choices=["true", "false"],
+        default=True,
         help="Publish articles as public or private"
     )
 
@@ -25,7 +26,7 @@ def parse_args():
     parser.add_argument(
         "--timeout",
         type=int,
-        default=6000, # 10 minutes
+        default=6000, # 100 minutes
         help="LLM request timeout in seconds (default: 120)"
     )
 

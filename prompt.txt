@@ -1,4 +1,4 @@
-Write a complete HTML blog article.
+Write a complete Markdown blog article.
 
 Topic: {{TOPIC}}
 
