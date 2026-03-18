@@ -1,6 +1,8 @@
 # autoBlog
 
-![logo](logo/logo.png)
+<p align="center">
+  <img src="logo/logo.png" alt="Logo" width="220">
+</p>
 
 Let an LLM write and publish blog articles while you sleep.
 
