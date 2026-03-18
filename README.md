@@ -122,47 +122,19 @@ Project structure:
 └── models
 ```
 
-Make sure:
-- `SUBJECT_ID` is correct
-- Output folder exists:
-
-```bash
-$ mkdir -p articles
-```
-
-By default TOPICS are:
-
-```
-
-TOPICS = [
-    "AI agents in 2026",
-    "future of autonomous systems",
-    "how LLMs change software engineering",
-    "AI and cybersecurity",
-    "limits of artificial intelligence",
-]
-
-```
-
-You can change them direclty in the Code
-
-**Note that the topic of an article is randomly chosen at runtime**
-
-You can also vary the prompt in:
+The prompt is stored in:
 
 `prompt.txt`
+
+The randomly chosen topics are in:
+
+`topics.txt`
 
 ---
 
 ## 9. Run the automation
 
 ```bash
-(menv) $ python3 autoBlog.py true \
-  --subject-id 24 \
-  --timeout 600 \
-  --topics-file topics.txt \
-  --prompt-file prompt.txt
-
 (menv) $ python3 autoBlog.py \ 
   --is_public true \
   --subject-id 24 \
@@ -170,7 +142,6 @@ You can also vary the prompt in:
   --llm-url http://127.0.0.1:8080/completion \
   --topics-file topics.txt \
   --prompt-file prompt.txt
-
 ```
 
 where the last arg is the visibility on your Statix blog
