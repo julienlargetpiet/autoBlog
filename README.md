@@ -1,5 +1,7 @@
 # autoBlog
 
+![logo](logo/logo.png)
+
 Let an LLM write and publish blog articles while you sleep.
 
 ---
