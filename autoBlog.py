@@ -45,7 +45,7 @@ def generate_article(topic):
                 "prompt": prompt,
                 "n_predict": 800
             },
-            timeout=120 
+            timeout=1000 
         )
     except requests.exceptions.ConnectionError:
         print("[ERROR] LLM server not reachable (is llama-server running?)")
