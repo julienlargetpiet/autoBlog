@@ -1,7 +1,5 @@
-# autoBlog
-
-
 <h2 align="center">“Let an LLM write and publish blog articles while you sleep.”</h2>
+
 
 <p align="center">
   <img src="logo/output.png" alt="Logo" width="220">
