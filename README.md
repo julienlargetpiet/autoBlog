@@ -157,8 +157,10 @@ You can also vary the prompt in:
 ## ▶️ 9. Run the automation
 
 ```bash
-(menv) $ python autoBlog.py
+(menv) $ python3 autoBlog.py true|false
 ```
+
+where the last arg is the visibility on your Statix blog
 
 ---
 
