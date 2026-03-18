@@ -4,7 +4,7 @@ Let an LLM write and publish blog articles while you sleep.
 
 ---
 
-## 🚀 Overview
+## Overview
 
 This project connects:
 - a **local LLM** (`llama.cpp`)
@@ -15,13 +15,13 @@ This project connects:
 
 ---
 
-## 🧱 1. Set up a `Statix` blog
+## 1. Set up a `Statix` blog
 
 - [Statix](https://github.com/julienlargetpiet/Statix)
 
 ---
 
-## ⚙️ 2. Configure Statix CLI
+## 2. Configure Statix CLI
 
 ```bash
 $ stx set-credentials --url URL --password TOKEN
@@ -29,7 +29,7 @@ $ stx set-credentials --url URL --password TOKEN
 
 ---
 
-## 🗂️ 3. Create a subject slot for AI articles
+## 3. Create a subject slot for AI articles
 
 ```bash
 $ stx subject add "AutoBlog - Auto AI generated articles"
@@ -49,7 +49,7 @@ SUBJECT_ID = 24
 
 ---
 
-## 🧠 4. Set up `llama.cpp`
+## 4. Set up `llama.cpp`
 
 ```bash
 $ sudo apt update
@@ -62,7 +62,7 @@ $ cmake --build build -j
 
 ---
 
-## 📦 5. Download a model
+## 5. Download a model
 
 Download a GGUF model (example: LLaMA 3.1 8B Q4):  
 👉 https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF
@@ -81,7 +81,7 @@ Place it in a folder, e.g.:
 
 ---
 
-## 🌐 6. Start the LLM server
+## 6. Start the LLM server
 
 ```bash
 ./build/bin/llama-server \
@@ -100,7 +100,7 @@ Place it in a folder, e.g.:
 
 ---
 
-## 🐍 7. Set up Python environment
+## 7. Set up Python environment
 
 ```bash
 $ python3 -m venv menv
@@ -110,7 +110,7 @@ $ source menv/bin/activate
 
 ---
 
-## 🤖 8. Configure `autoBlog.py`
+## 8. Configure `autoBlog.py`
 
 Project structure:
 
@@ -154,7 +154,7 @@ You can also vary the prompt in:
 
 ---
 
-## ▶️ 9. Run the automation
+## 9. Run the automation
 
 ```bash
 (menv) $ python3 autoBlog.py true|false
@@ -164,7 +164,7 @@ where the last arg is the visibility on your Statix blog
 
 ---
 
-## 🔁 What happens
+## What happens
 
 Loop:
 1. Pick a topic
@@ -176,7 +176,7 @@ Loop:
 
 ---
 
-## 📄 Output format
+## Output format
 
 - Articles are generated in Markdown
 - Title (`# Title`) is extracted and removed from content
@@ -188,7 +188,7 @@ articles/<slug>.md
 
 ---
 
-## ⚡ Example pipeline
+## Example pipeline
 
 ```
 LLM → Markdown
@@ -204,7 +204,7 @@ stx publish
 
 ---
 
-## 🧠 Notes
+## Notes
 
 - No external APIs required
 - Fully local (LLM + CLI)
@@ -213,7 +213,7 @@ stx publish
 
 ---
 
-## 🔥 Next steps
+## Next steps
 
 - Better prompt engineering
 - Topic generation via LLM
@@ -222,7 +222,9 @@ stx publish
 
 ---
 
-## 😄 Philosophy
+## Philosophy
 
 No SaaS. No API keys. No black boxes.  
 Just local compute, full control, and automation.
+
+
