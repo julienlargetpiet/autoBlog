@@ -144,7 +144,13 @@ The randomly chosen topics are in:
   --prompt-file prompt.txt
 ```
 
-where the last arg is the visibility on your Statix blog
+## 9.1 Side-effects
+
+After running this command, a metadata `Statix` file will be created:
+
+`.statix_articles.json`
+
+That is the only side-effect
 
 ---
 
