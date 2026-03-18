@@ -153,7 +153,7 @@ def extract_title(content):
         for line in lines:
             stripped = line.strip()
             if stripped:
-                title = re.sub(r"^#+\s*", "", stripped)
+                title = re.sub(r"^#+\s*", "", stripped) # any first line that is non empty we replace its beginning (wether #+ or whitespace by nothing)
                 break
 
     if not title:
