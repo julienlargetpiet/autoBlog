@@ -22,16 +22,10 @@ def slugify(text):
     return text.strip('-')
 
 def generate_article(topic):
-    prompt = f"""
-Write a complete HTML blog article.
+    with open("prompt.txt", "r") as f:
+        prompt_template = f.read()
 
-Topic: {topic}
-
-Requirements:
-- Valid Markdown only
-- no '#', maximum header is '##' apart from title
-- so only title is allowed to be '#'
-"""
+    prompt = prompt_template.replace("{{TOPIC}}", topic)
 
     response = requests.post(LLM_URL, json={
         "prompt": prompt,

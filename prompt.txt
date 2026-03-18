@@ -1,0 +1,8 @@
+Write a complete HTML blog article.
+
+Topic: {{TOPIC}}
+
+Requirements:
+- Valid Markdown only
+- no '#', maximum header is '##' apart from title
+- so only title is allowed to be '#'
