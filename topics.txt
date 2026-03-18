@@ -1,0 +1,48 @@
+# Core AI trends
+AI agents in 2026
+The evolution of autonomous systems
+How LLMs are reshaping software engineering
+The limits of artificial intelligence
+AI and the future of work
+
+# Engineering-focused
+Building reliable AI systems in production
+Memory management challenges in LLM inference
+Latency vs quality tradeoffs in local LLMs
+How AI changes debugging workflows
+Designing deterministic systems with probabilistic models
+
+# Systems & performance (fits your profile well)
+Optimizing LLM inference on CPU
+Understanding KV cache and memory bottlenecks
+Tradeoffs between quantization levels (Q4 vs Q6)
+Scaling local AI systems without GPUs
+Threading and performance in AI inference engines
+
+# Security & risks
+AI and cybersecurity threats in 2026
+Can AI systems be exploited?
+Prompt injection and defense strategies
+Risks of autonomous agents in production
+AI-generated code security concerns
+
+# Philosophy / deeper thinking
+Is AI actually intelligent?
+Determinism vs emergence in machine learning
+The illusion of reasoning in LLMs
+Can machines truly understand meaning?
+The future of human-AI collaboration
+
+# Practical / applied
+Using AI to automate content pipelines
+Building a self-writing blog with local LLMs
+AI tools for developers in 2026
+Automating workflows with AI agents
+How to integrate AI into existing systems
+
+# Experimental / edgy
+What happens when AI writes everything?
+The death of traditional blogging?
+Fully autonomous software systems
+AI-generated knowledge vs human knowledge
+The long-term impact of self-improving systems

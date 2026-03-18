@@ -157,7 +157,20 @@ You can also vary the prompt in:
 ## 9. Run the automation
 
 ```bash
-(menv) $ python3 autoBlog.py true|false
+(menv) $ python3 autoBlog.py true \
+  --subject-id 24 \
+  --timeout 600 \
+  --topics-file topics.txt \
+  --prompt-file prompt.txt
+
+(menv) $ python3 autoBlog.py \ 
+  --is_public true \
+  --subject-id 24 \
+  --timeout 6000 \
+  --llm-url http://127.0.0.1:8080/completion \
+  --topics-file topics.txt \
+  --prompt-file prompt.txt
+
 ```
 
 where the last arg is the visibility on your Statix blog

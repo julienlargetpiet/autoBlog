@@ -1,3 +1,4 @@
+import argparse
 import sys
 import requests
 import subprocess
@@ -5,23 +6,79 @@ import time
 import re
 import random
 
-if len(sys.argv) != 2 or sys.argv[1].lower() not in ["true", "false"]:
-    print("Usage: python3 autoBlog.py true|false")
-    sys.exit(1)
+def parse_args():
+    parser = argparse.ArgumentParser(description="AutoBlog generator")
 
-IS_PUBLIC = sys.argv[1].lower()
+    parser.add_argument(
+        "--is_public",
+        choices=["true", "false"],
+        help="Publish articles as public or private"
+    )
 
-LLM_URL = "http://127.0.0.1:8080/completion"
+    parser.add_argument(
+        "--subject-id",
+        type=int,
+        default=24,
+        help="Statix subject ID (default: 24)"
+    )
 
-SUBJECT_ID = 24
+    parser.add_argument(
+        "--timeout",
+        type=int,
+        default=6000, # 10 minutes
+        help="LLM request timeout in seconds (default: 120)"
+    )
 
-TOPICS = [
-    "AI agents in 2026",
-    "future of autonomous systems",
-    "how LLMs change software engineering",
-    "AI and cybersecurity",
-    "limits of artificial intelligence",
-]
+    parser.add_argument(
+        "--llm-url",
+        default="http://127.0.0.1:8080/completion",
+        help="LLM server URL"
+    )
+
+    parser.add_argument(
+        "--topics-file",
+        default="topics.txt",
+        help="Path to topics file (default: topics.txt)"
+    )
+    
+    parser.add_argument(
+        "--prompt-file",
+        default="prompt.txt",
+        help="Path to prompt file (default: prompt.txt)"
+    )
+
+    return parser.parse_args()
+
+def load_topics(path):
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            topics = [
+                line.strip()
+                for line in f.readlines()
+                if line.strip() and not line.startswith("#")
+            ]
+
+        if not topics:
+            raise ValueError("No valid topics found")
+
+        return topics
+
+    except Exception as e:
+        print(f"[ERROR] Failed to load topics from {path}: {e}")
+        return [
+            "AI agents in 2026",
+            "future of autonomous systems",
+            "AI and cybersecurity"
+        ]
+
+args = parse_args()
+
+IS_PUBLIC = args.is_public
+SUBJECT_ID = args.subject_id
+TIMEOUT_VALUE = args.timeout
+LLM_URL = args.llm_url
+TOPICS = load_topics(args.topics_file)
+PROMPT_FILE = args.prompt_file
 
 def slugify(text):
     text = text.lower()
@@ -30,7 +87,7 @@ def slugify(text):
 
 def generate_article(topic):
     try:
-        with open("prompt.txt", "r", encoding="utf-8") as f:
+        with open(PROMPT_FILE, "r", encoding="utf-8") as f:
             prompt_template = f.read().strip()
     except Exception as e:
         print(f"[ERROR] Failed to read prompt.txt: {e}")
@@ -45,7 +102,7 @@ def generate_article(topic):
                 "prompt": prompt,
                 "n_predict": 800
             },
-            timeout=1000 
+            timeout=TIMEOUT_VALUE
         )
     except requests.exceptions.ConnectionError:
         print("[ERROR] LLM server not reachable (is llama-server running?)")
