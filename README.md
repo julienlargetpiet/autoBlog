@@ -44,7 +44,9 @@ List subjects:
 $ stx subjects
 ```
 
-👉 Note the **ID** and set while you'll run the script with the `--subject_id` flag.
+👉 Note the **ID** and set while you'll run the script with the `--subject_id` flag:
+
+- Cf: [run](#9-run-the-automation)
 
 ---
 
