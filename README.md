@@ -44,11 +44,7 @@ List subjects:
 $ stx subjects
 ```
 
-👉 Note the **ID** (e.g. `24`) and set it in your script:
-
-```python
-SUBJECT_ID = 24
-```
+👉 Note the **ID** and set while you'll run the script with the `--subject_id` flag.
 
 ---
 
@@ -136,6 +132,8 @@ The randomly chosen topics are in:
 ---
 
 ## 9. Run the automation
+
+Example:
 
 ```bash
 (menv) $ python3 autoBlog.py \ 
